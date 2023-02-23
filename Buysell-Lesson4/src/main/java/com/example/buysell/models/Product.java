@@ -29,12 +29,14 @@ public class Product {
     private String city;
     @Column(name = "author")
     private String author;
+    // указывает на связь один ко многим
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
     mappedBy = "product")
     private List<Image> images = new ArrayList<>();
     private Long previewImageId;
     private LocalDateTime dateOfCreated;
 
+    //помогает нам автоматически заполнять атрибуты сущности перед сохранением
     @PrePersist
     private void init() {
         dateOfCreated = LocalDateTime.now();
