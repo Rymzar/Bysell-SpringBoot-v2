@@ -12,8 +12,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/*показывает, что класс представляет собой сервис для реализации бизнес-логики.
+ По сути, аннотация не отличается от Component, однако она помогает программисту
+ указать смысловую нагрузку используемого класса*/
 @Service
+/*SLF4J предоставляет простой обобщённый интерфейс для систем протоколирования,
+не зависящий от конкретной реализации*/
 @Slf4j
+//@RequiredArgsConstructor генерирует конструктор с 1 параметром для каждого поля, которое требует специальной обработки
 @RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
